@@ -58,7 +58,7 @@ int __stdcall WinMain(HINSTANCE, HINSTANCE, PSTR, int)
     // Clear to red and present
     winrt::com_ptr<ID3D11RenderTargetView> renderTargetView;
     winrt::check_hresult(d3dDevice->CreateRenderTargetView(backBuffer.get(), nullptr, renderTargetView.put()));
-    float color[4] = { 1.0f, 0.0f, 0.0f, 1.0f };
+    float color[4] = { 1.0f, 0.0f, 0.0f, 1.0f }; // RGBA
     d3dContext->ClearRenderTargetView(renderTargetView.get(), color);
     DXGI_PRESENT_PARAMETERS presentParameters = {};
     winrt::check_hresult(swapChain->Present1(1, 0, &presentParameters));
